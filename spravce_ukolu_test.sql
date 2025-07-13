@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS spravce_ukolu_test;
+USE spravce_ukolu_test;
+
+CREATE TABLE IF NOT EXISTS ukoly (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nazev VARCHAR(255) NOT NULL,
+    popis TEXT NOT NULL,
+    stav ENUM('nezahájeno', 'probíhá', 'hotovo') DEFAULT 'nezahájeno',
+    datum_vytvoreni DATETIME DEFAULT CURRENT_TIMESTAMP
+);
